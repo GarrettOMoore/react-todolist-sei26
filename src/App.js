@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Counter from './Components/Counter';
 import Controls from './Components/Controls';
+import TodoList from './Components/TodoList';
 
 class App extends Component {
   constructor(props) {
@@ -18,8 +19,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Counter />
+        <Counter count={this.state.items.length}/>
         <Controls />
+        <TodoList items={this.state.items} />
       </div>
     );
   }
