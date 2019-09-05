@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-class Controls extends Component {
-
-render(){
+const Controls = (props) => {
 		return(
-			<p>Controls</p>
+			<>
+				<input onChange={props.handleChange} type="text"></input>
+				<button onClick={props.handleSubmit}>Add</button>
+			</>
 		)
-	}
 };
 
 export default Controls;

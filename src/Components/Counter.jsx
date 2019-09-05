@@ -2,7 +2,7 @@ import React from 'react';
 
 const Counter = (props) => {
 	return(
-		<p>Counter here...</p>
+		<p>Count is: {props.count} </p>
 	)
 };
 
