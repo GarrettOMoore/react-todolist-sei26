@@ -4,10 +4,7 @@ class Controls extends Component {
 
 render(){
 		return(
-			<>
-				<input type='text'></input>
-				<button>Add</button>
-			</>
+			<p>Controls</p>
 		)
 	}
 };
