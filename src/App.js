@@ -17,7 +17,6 @@ class App extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.toggleFinishedItem = this.toggleFinishedItem.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -38,12 +37,6 @@ class App extends Component {
       })
     }
   };
-
-  toggleFinishedItem(indexToToggle) {
-    console.log("Toggle: ", indexToToggle);
-    let currentItems = [...this.state.items];
-    currentItems[indexToToggle].isDone = !currentItems[indexToToggle].isDone;
-  }
 
   handleDelete(indexToDelete){
     let currentItems = [...this.state.items];

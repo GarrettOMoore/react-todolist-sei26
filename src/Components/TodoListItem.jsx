@@ -1,13 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const TodoListItem = (props) => {
-	return(
-		<div id="list-item-box">
-			{props.item.isDone ? <li style={'text-decoration'= line-through}>{props.item.text}</li> : <li>{props.item.text}</li>}
-			<p onClick={()=> props.toggle(props.index)} className="check-icons">	&#9745; </p>
-			<p onClick={() => props.delete(props.index)} className="check-icons">&#x2716;</p>
-		</div>
-	)
+class TodoListItem extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			completed: false
+		}
+		this.toggleFinishedItem = this.toggleFinishedItem.bind(this);
+	}
+
+	toggleFinishedItem() {
+		this.setState({
+			completed: true
+		})
+	}
+	
+	render() {
+		let text = this.state.completed ?  <s>{this.props.item.text}</s> : <p>{this.props.item.text}</p>;
+		
+		return(
+	
+			<div id="list-item-box">
+				{text}
+				<p onClick={this.toggleFinishedItem} className="check-icons">	&#9745; </p>
+				<p onClick={() => this.props.delete(this.props.index)} className="check-icons"> &#x2716; </p>
+			</div>
+		)
+	}
 };
 
 export default TodoListItem;
